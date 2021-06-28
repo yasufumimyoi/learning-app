@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { CodeIcon } from '@heroicons/react/outline'
+import CourseCard from '../../components/CourseCard'
 
 const courseRef = [
   { title: 'React', image: '/react.svg', path: 'react' },
@@ -27,8 +28,10 @@ const Courses = () => {
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 mb-16">
         {courseRef.map((course) => (
-          <Link as={`/courses/${course.path}`} href="/courses/course" key={course.path}>
-            <a></a>
+          <Link as={`/courses/${course.path}`} href="/courses/[course]" key={course.path}>
+            <a>
+              <CourseCard title={course.title} image={course.image} />
+            </a>
           </Link>
         ))}
       </div>
