@@ -4,8 +4,8 @@ import CourseCard from '../../components/CourseCard'
 
 const courseRef = [
   { title: 'React', image: '/react.svg', path: 'react' },
-  { title: 'React-Router', image: '/react-router.svg', path: 'react-router' },
-  { title: 'Material-ui', image: '/material-ui.svg', path: 'material-ui' },
+  { title: 'React-Router', image: '/react-router.svg', path: 'router' },
+  { title: 'Material-ui', image: '/material-ui.svg', path: 'material' },
   { title: 'JavaScript', image: '/javaScript.svg', path: 'javascript' },
   { title: 'TypeScript', image: '/typeScript.svg', path: 'typescript' },
   { title: 'Node.js', image: '/node.svg', path: 'node' },
