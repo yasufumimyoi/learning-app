@@ -7,7 +7,7 @@ import { schema } from '../validation/schemas'
 import { useDispatch } from 'react-redux'
 import { setLogin } from '../redux/user'
 
-const SignIn = () => {
+const Login = () => {
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -81,7 +81,7 @@ const SignIn = () => {
     <div className="flex flex-col h-screen">
       <div className="flex-1 mt-20 sm:flex sm:justify-around">
         <div className="mb-10">
-          <h2 className="text-white font-bold text-2xl mb-8 text-center">Sign in!!</h2>
+          <h2 className="text-white font-bold text-2xl mb-8 text-center">Login!!</h2>
           <div className="flex justify-around w-80 mx-auto mb-8">
             <button className="focus:outline-none" onClick={handelExistingUserGoogleLogin}>
               <img
@@ -134,21 +134,13 @@ const SignIn = () => {
               </a>
             </Link>
             <button className="text-white bg-green-400 rounded px-8 py-2 focus:outline-none">
-              Sigin in
+              LOGIN
             </button>
           </form>
-        </div>
-        <div className="w-80 mx-auto sm:mx-0">
-          <h2 className="text-white font-bold text-2xl mb-8 text-center">Sign up!!</h2>
-          <Link href="/signup">
-            <a className="text-white bg-green-400 rounded px-8 py-2 block text-center">
-              初めての方はこちらへ
-            </a>
-          </Link>
         </div>
       </div>
     </div>
   )
 }
 
-export default SignIn
+export default Login
