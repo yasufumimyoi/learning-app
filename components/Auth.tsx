@@ -1,27 +1,26 @@
-import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { firebase } from '../firebase/config'
+import { setUid } from '../redux/user'
 
 const Auth = () => {
-  const router = useRouter()
-  return (
-    <div className="flex">
-      <div className="mr-4">
-        <button
-          className="bg-green-500 text-white rounded px-8 py-2 focus:outline-none"
-          onClick={() => router.push('/courses')}
-        >
-          GUEST SIGNUP
-        </button>
-      </div>
-      <div>
-        <button
-          className="bg-green-500 text-white rounded px-8 py-2 focus:outline-none"
-          onClick={() => router.push('/courses')}
-        >
-          SIGNIN
-        </button>
-      </div>
-    </div>
-  )
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        const { uid, isAnonymous } = user
+        if (isAnonymous) {
+          dispatch(setUid(uid))
+          console.log('uid', uid)
+        } else {
+          dispatch(setUid(uid))
+        }
+      }
+    })
+  }, [])
+
+  return <></>
 }
 
 export default Auth
