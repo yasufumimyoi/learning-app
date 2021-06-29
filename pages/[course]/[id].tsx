@@ -11,14 +11,13 @@ const Video = () => {
   const selectedVideo = videoData.filter((video) => video.id === id)
   const dispath = useAppDispatch()
   const { uid } = useAppSelector((state) => state.user)
-  console.log(uid)
 
   const onChange = (e: any) => {
     const toggleCompleted = videoData.map(
       ({ id, url, title, image, path, completed, category }) => {
         if (id === e.target.id) {
           completed = !completed
-          writeFirestore(id, url, title, image, path, completed, category, 'test')
+          writeFirestore(id, url, title, image, path, completed, category, uid)
         }
 
         return {
@@ -32,6 +31,7 @@ const Video = () => {
         }
       }
     )
+
     dispath(toggleStatus(toggleCompleted))
   }
 

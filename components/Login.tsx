@@ -32,9 +32,9 @@ const Auth = () => {
       <div>
         <button
           className="bg-green-500 text-white rounded px-8 py-2 focus:outline-none"
-          onClick={() => router.push('/signin')}
+          onClick={() => router.push('/login')}
         >
-          SIGNIN
+          LOGIN
         </button>
       </div>
     </div>

@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { firebase } from '../firebase/config'
-import { setUid } from '../redux/user'
+import { setUid, setLogin } from '../redux/user'
+import { useAppDispatch } from '../types/hooks'
+import { fetchVideoData } from '../redux/video'
 
 const Auth = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -12,9 +13,11 @@ const Auth = () => {
         const { uid, isAnonymous } = user
         if (isAnonymous) {
           dispatch(setUid(uid))
-          console.log('uid', uid)
+          dispatch(fetchVideoData(uid))
         } else {
           dispatch(setUid(uid))
+          dispatch(setLogin())
+          dispatch(fetchVideoData(uid))
         }
       }
     })
