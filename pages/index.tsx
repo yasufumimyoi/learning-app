@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Top from '../components/Top'
-import Auth from '../components/Auth'
+import Login from '../components/Login'
 import Card from '../components/BenefitCard'
 import Description from '../components/Description'
 
@@ -16,7 +16,7 @@ export default function Home() {
       <div className="flex mb-10">
         <div className="mr-14">
           <Top />
-          <Auth />
+          <Login />
         </div>
         <div className="hidden sm:block">
           <Image src="/mission.svg" alt="mission" width={400} height={400} />

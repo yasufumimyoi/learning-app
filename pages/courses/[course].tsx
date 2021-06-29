@@ -82,7 +82,7 @@ const Course = () => {
   const { course } = router.query
 
   return (
-    <div className="text-white grid md:grid-cols-3 gap-6 mb-16">
+    <div className="text-white grid md:grid-cols-3 gap-6 pb-16">
       {reactVideo.map((video) => (
         <div className="bg-gray-800 rounded-xl p-5" key={video.id}>
           <Link as={`/${course}/${video.id}`} href="/[course]/[id]" key={video.id}>

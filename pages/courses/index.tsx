@@ -16,7 +16,7 @@ const courseRef = [
 
 const Courses = () => {
   return (
-    <div className="text-white">
+    <div className="text-white bg-gray-900">
       <p className="text-base mb-5 sm:text-xl md:text-2xl">
         Missionをこなして達成率を上げてみよう。
       </p>
@@ -26,7 +26,7 @@ const Courses = () => {
           <a>全てのMission一覧</a>
         </Link>
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 mb-16">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 pb-16">
         {courseRef.map((course) => (
           <Link as={`/courses/${course.path}`} href="/courses/[course]" key={course.path}>
             <a>
