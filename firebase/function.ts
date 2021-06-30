@@ -1,4 +1,5 @@
 import { firebase } from './config'
+import { ProfileProps } from '../types/index'
 
 export const writeFirestore = (
   id: string,
@@ -41,13 +42,13 @@ export const removeFirestore = (id: string, uid: string) => {
   }
 }
 
-export const editFireStore = (uid: string, data: any) => {
+export const editFireStore = (uid: string, data: ProfileProps) => {
+  console.log('hey')
   try {
     firebase.firestore().collection('users').doc(uid).collection('profile').doc('detail').set({
       name: data.name,
       location: data.location,
-      genre: data.genre,
-      recommend: data.recommend,
+      comment: data.comment,
       image: data.image,
     })
   } catch (error) {

@@ -49,7 +49,11 @@ const Header = () => {
       {pathname !== '/' && pathname !== '/login' && (
         <div className="flex items-center">
           <div className="mr-4">
-            <HeaderItem Icon={UserIcon} title="PROFILE" />
+            <Link href="/profile">
+              <a>
+                <HeaderItem Icon={UserIcon} title="PROFILE" />
+              </a>
+            </Link>
           </div>
           {isLogin ? (
             <button onClick={handleLogout}>

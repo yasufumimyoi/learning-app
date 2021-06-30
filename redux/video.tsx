@@ -45,11 +45,13 @@ export const fetchVideoData = createAsyncThunk(
 )
 
 type State = {
-  videos: VideoProps[] | undefined
+  videos: VideoProps[]
+  status: string
 }
 
 const initialState: State = {
   videos: [],
+  status: '',
 }
 
 export const videoSlice = createSlice({
@@ -62,6 +64,17 @@ export const videoSlice = createSlice({
     toggleStatus: (state: State, action: PayloadAction<VideoProps[]>) => {
       state.videos = action.payload
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchVideoData.pending, (state) => {
+      state.status = 'loading'
+    })
+    builder.addCase(fetchVideoData.fulfilled, (state) => {
+      state.status = 'success'
+    })
+    builder.addCase(fetchVideoData.rejected, (state) => {
+      state.status = 'rejected9'
+    })
   },
 })
 
