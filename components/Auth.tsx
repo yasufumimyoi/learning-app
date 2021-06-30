@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { firebase } from '../firebase/config'
-import { setUid, setLogin } from '../redux/user'
+import { setUid, setLogin, fetchProfileData } from '../redux/user'
 import { useAppDispatch } from '../types/hooks'
 import { fetchVideoData } from '../redux/video'
 
@@ -14,10 +14,12 @@ const Auth = () => {
         if (isAnonymous) {
           dispatch(setUid(uid))
           dispatch(fetchVideoData(uid))
+          dispatch(fetchProfileData(uid))
         } else {
           dispatch(setUid(uid))
           dispatch(setLogin())
           dispatch(fetchVideoData(uid))
+          dispatch(fetchProfileData(uid))
         }
       }
     })

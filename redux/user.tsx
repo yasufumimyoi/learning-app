@@ -1,13 +1,57 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
+import { firebase } from '../firebase/config'
+
+export const fetchProfileData = createAsyncThunk(
+  'user/fetchProfileData',
+  async (uid: string, { dispatch }) => {
+    try {
+      const dataRef = await firebase
+        .firestore()
+        .collection('users')
+        .doc(uid)
+        .collection('profile')
+        .get()
+      if (!dataRef.empty) {
+        await firebase
+          .firestore()
+          .collection('users')
+          .doc(uid)
+          .collection('profile')
+          .get()
+          .then((snapshot) => {
+            snapshot.forEach((doc) => {
+              dispatch(setProfile(doc.data()))
+            })
+          })
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+)
 
 type State = {
   uid: string
   isLogin: boolean
+  profile: {
+    name?: string
+    location?: string
+    comment?: string
+    image?: string
+  }
+  status: string
 }
 
 const initialState: State = {
   uid: '',
   isLogin: false,
+  profile: {
+    name: '',
+    location: '',
+    comment: '',
+    image: '',
+  },
+  status: '',
 }
 
 export const userSlice = createSlice({
@@ -26,9 +70,31 @@ export const userSlice = createSlice({
     Logout: (state: State) => {
       state.isLogin = false
     },
+    setProfile: (state, action) => {
+      state.profile = action.payload
+    },
+    removeProfile: (state) => {
+      state.profile = {
+        name: '',
+        location: '',
+        comment: '',
+        image: '',
+      }
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchProfileData.pending, (state) => {
+      state.status = 'loading'
+    })
+    builder.addCase(fetchProfileData.fulfilled, (state) => {
+      state.status = 'success'
+    })
+    builder.addCase(fetchProfileData.rejected, (state) => {
+      state.status = 'rejected'
+    })
   },
 })
 
-export const { setUid, removeUid, setLogin, Logout } = userSlice.actions
+export const { setUid, removeUid, setLogin, Logout, setProfile, removeProfile } = userSlice.actions
 
 export default userSlice.reducer

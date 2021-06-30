@@ -13,3 +13,14 @@ export type VideoProps = {
   completed: boolean
   category: string
 }
+
+export type ProfileProps = {
+  name?: string
+  location?: string
+  comment?: string
+  image?: string
+}
+
+export type ChartProps = {
+  data: { subject: string; Mission: number; fullMark: number }[]
+}
