@@ -78,10 +78,10 @@ const Login = () => {
   }
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col">
       <div className="flex-1 mt-20 sm:flex sm:justify-around">
         <div className="mb-10">
-          <h2 className="text-white font-bold text-2xl mb-8 text-center">Login!!</h2>
+          <h2 className="font-bold text-2xl mb-8 text-center">Login!!</h2>
           <div className="flex justify-around w-80 mx-auto mb-8">
             <button className="focus:outline-none" onClick={handelExistingUserGoogleLogin}>
               <img
@@ -98,7 +98,7 @@ const Login = () => {
             <button className="focus:outline-none" onClick={handelExistingUserGithubLogin}>
               <img
                 src="github-icon.svg"
-                className="w-8 bg-white rounded h-8 cursor-pointer hover:opacity-80 transition duration-300"
+                className="w-8 rounded h-8 cursor-pointer hover:opacity-80 transition duration-300"
               />
             </button>
           </div>
@@ -129,11 +129,11 @@ const Login = () => {
               {...register('password')}
             />
             <Link href="/reset">
-              <a className="text-white text-center text-xs mb-6 cursor-pointer hover:opacity-50 transition duration-300">
+              <a className="text-center text-xs mb-6 cursor-pointer hover:opacity-50 transition duration-300">
                 パスワードをお忘れの方はこちらへ
               </a>
             </Link>
-            <button className="text-white bg-green-400 rounded px-8 py-2 focus:outline-none">
+            <button className="text-white bg-green-600 rounded px-8 py-2 focus:outline-none">
               LOGIN
             </button>
           </form>

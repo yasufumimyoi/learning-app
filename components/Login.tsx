@@ -23,7 +23,7 @@ const Auth = () => {
     <div className="flex">
       <div className="mr-4">
         <button
-          className="bg-green-500 text-white rounded px-8 py-2 focus:outline-none"
+          className="bg-green-600 text-white rounded px-8 py-2 focus:outline-none"
           onClick={handleGuestLogin}
         >
           GUEST
@@ -31,7 +31,7 @@ const Auth = () => {
       </div>
       <div>
         <button
-          className="bg-green-500 text-white rounded px-8 py-2 focus:outline-none"
+          className="bg-green-600 text-white rounded px-8 py-2 focus:outline-none"
           onClick={() => router.push('/login')}
         >
           LOGIN

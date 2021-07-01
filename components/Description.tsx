@@ -1,5 +1,5 @@
 const Description = () => (
-  <div className="text-white ">
+  <div>
     <h3 className="text-center text-lg md:text-2xl mb-10">
       現在50個以上のMissionが用意されています。
     </h3>

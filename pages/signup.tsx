@@ -73,7 +73,7 @@ const SignUp = () => {
     <div>
       <div className="flex justify-center mt-20 mb-20">
         <div>
-          <h2 className="text-white font-bold text-2xl mb-8 text-center">Sign Up!!</h2>
+          <h2 className="font-bold text-2xl mb-8 text-center">Sign Up!!</h2>
           <div className="flex justify-around mb-8">
             <button className="focus:outline-none" onClick={createAccountWithGoogle}>
               <img
@@ -90,7 +90,7 @@ const SignUp = () => {
             <button className="focus:outline-none" onClick={createAccountWithGithub}>
               <img
                 src="github-icon.svg"
-                className="bg-white rounded w-8 h-8 cursor-pointer hover:opacity-80 transition duration-300"
+                className="rounded w-8 h-8 cursor-pointer hover:opacity-80 transition duration-300"
               />
             </button>
           </div>
@@ -118,7 +118,7 @@ const SignUp = () => {
               {...register('password')}
             />
             <button
-              className="text-white bg-green-500 rounded px-8 py-2 mb-6 focus:outline-none"
+              className="text-white bg-green-600 rounded px-8 py-2 mb-6 focus:outline-none"
               type="submit"
             >
               Sign Up
