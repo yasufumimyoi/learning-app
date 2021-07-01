@@ -12,6 +12,7 @@ export type VideoProps = {
   path: string
   completed: boolean
   category: string
+  flag: boolean
 }
 
 export type ProfileProps = {

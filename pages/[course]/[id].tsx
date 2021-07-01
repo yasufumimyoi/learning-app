@@ -14,17 +14,30 @@ const Video = () => {
 
   const onChange = (e: any) => {
     let nextVideo = ''
-    const toggleCompleted = videos?.map(({ id, url, title, image, path, completed, category }) => {
-      if (id === e.target.id) {
-        completed = !completed
-        writeFirestore(id, url, title, image, path, completed, category, uid)
-        const nextId = parseInt(id.slice(-1)) + 1
-        const nextCourse = id.indexOf('_')
-        nextVideo = id.slice(0, nextCourse + 1) + nextId
-      }
+    const toggleCompleted = videos?.map(
+      ({ id, url, title, image, path, completed, category, flag }) => {
+        if (id === e.target.id) {
+          completed = !completed
+          writeFirestore(id, url, title, image, path, completed, category, flag, uid)
+          const nextId = parseInt(id.slice(-1)) + 1
+          const nextCourse = id.indexOf('_')
+          nextVideo = id.slice(0, nextCourse + 1) + nextId
+        }
 
-      if (id === nextVideo) {
-        // flag = false
+        if (id === nextVideo) {
+          flag = false
+
+          return {
+            id,
+            url,
+            title,
+            image,
+            path,
+            completed,
+            category,
+            flag,
+          }
+        }
 
         return {
           id,
@@ -34,21 +47,10 @@ const Video = () => {
           path,
           completed,
           category,
-          // flag,
+          flag,
         }
       }
-
-      return {
-        id,
-        url,
-        title,
-        image,
-        path,
-        completed,
-        category,
-        // flag,
-      }
-    })
+    )
 
     dispath(toggleStatus(toggleCompleted))
   }
