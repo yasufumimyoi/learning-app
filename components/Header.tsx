@@ -36,13 +36,13 @@ const Header = () => {
   }
 
   return (
-    <header className="flex justify-between text-white text-lg font-bold mb-10 pt-8">
+    <header className="flex justify-between text-lg font-bold mb-10 pt-8">
       <div className="flex items-center">
         <button
           className={`flex items-center ${pathname === '/' && 'cursor-auto'}`}
           onClick={handleTop}
         >
-          <AcademicCapIcon className="h-8 mr-4 text-green-400" />
+          <AcademicCapIcon className="h-8 mr-4 text-green-600" />
           <div className="font-bold">Mission in Programing</div>
         </button>
       </div>
