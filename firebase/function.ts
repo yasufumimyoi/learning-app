@@ -9,6 +9,7 @@ export const writeFirestore = (
   path: string,
   completed: boolean,
   category: string,
+  flag: boolean,
   uid: string
 ) => {
   const time = firebase.firestore.Timestamp.fromMillis(new Date() as any)
@@ -22,6 +23,7 @@ export const writeFirestore = (
       path,
       completed,
       category,
+      flag,
     })
     if (completed) {
       firebase.firestore().collection('activity').doc().set({
