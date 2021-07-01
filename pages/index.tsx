@@ -4,6 +4,7 @@ import Top from '../components/Top'
 import Login from '../components/Login'
 import Card from '../components/BenefitCard'
 import Description from '../components/Description'
+import ContentSwiper from '../components/ContentSwiper'
 
 export default function Home() {
   return (
@@ -39,7 +40,12 @@ export default function Home() {
           image="/card03.svg"
         />
       </div>
-      <Description />
+      <div className="mb-20">
+        <Description />
+      </div>
+      <div className="mb-20">
+        <ContentSwiper />
+      </div>
     </div>
   )
 }
