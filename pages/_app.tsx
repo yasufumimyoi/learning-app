@@ -9,9 +9,9 @@ import Footer from '../components/Footer'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
+      <Auth />
+      <Header />
       <div className="w-11/12 mx-auto xl:max-w-7xl xl:mx-auto">
-        <Auth />
-        <Header />
         <Component {...pageProps} />
         <Footer />
       </div>
