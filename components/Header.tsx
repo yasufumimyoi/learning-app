@@ -36,38 +36,42 @@ const Header = () => {
   }
 
   return (
-    <header className="flex justify-between text-lg font-bold mb-10 pt-8">
-      <div className="flex items-center">
-        <button
-          className={`flex items-center ${pathname === '/' && 'cursor-auto'}`}
-          onClick={handleTop}
-        >
-          <AcademicCapIcon className="h-8 mr-4 text-green-600" />
-          <div className="font-bold">Mission in Programing</div>
-        </button>
-      </div>
-      {pathname !== '/' && pathname !== '/login' && (
+    <header className="bg-gray-900">
+      <div className="flex justify-between text-lg font-bold mb-10 py-5 w-11/12 mx-auto xl:max-w-7xl xl:mx-auto ">
         <div className="flex items-center">
-          <div className="mr-4">
-            <Link href="/profile">
-              <a>
-                <HeaderItem Icon={UserIcon} title="PROFILE" />
-              </a>
-            </Link>
-          </div>
-          {isLogin ? (
-            <button onClick={handleLogout}>
-              <HeaderItem Icon={LogoutIcon} title="LOGOUT" />
-            </button>
-          ) : (
-            <Link href="/signup">
-              <a>
-                <HeaderItem Icon={LoginIcon} title="SIGNUP" />
-              </a>
-            </Link>
-          )}
+          <button
+            className={`flex items-center ${
+              pathname === '/' ? 'cursor-auto' : 'group hover:opacity-50 duration-300'
+            } `}
+            onClick={handleTop}
+          >
+            <AcademicCapIcon className="h-8 mr-4 text-green-600" />
+            <div className="text-white font-bold  text-sm sm:text-base">Mission in Programing</div>
+          </button>
         </div>
-      )}
+        {pathname !== '/' && pathname !== '/login' && (
+          <div className="flex items-center">
+            <div className="mr-4">
+              <Link href="/profile">
+                <a>
+                  <HeaderItem Icon={UserIcon} title="PROFILE" />
+                </a>
+              </Link>
+            </div>
+            {isLogin ? (
+              <button onClick={handleLogout}>
+                <HeaderItem Icon={LogoutIcon} title="LOGOUT" />
+              </button>
+            ) : (
+              <Link href="/signup">
+                <a>
+                  <HeaderItem Icon={LoginIcon} title="SIGNUP" />
+                </a>
+              </Link>
+            )}
+          </div>
+        )}
+      </div>
     </header>
   )
 }
