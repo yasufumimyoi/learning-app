@@ -8,7 +8,7 @@ import { LockClosedIcon } from '@heroicons/react/outline'
 const Course = () => {
   const router = useRouter()
   const { course } = router.query
-  const { videos } = useAppSelector((state) => state.video)
+  const { videos, status } = useAppSelector((state) => state.video)
 
   let selectedList: VideoProps[] = []
   switch (course) {
@@ -44,28 +44,31 @@ const Course = () => {
   }
 
   return (
-    <div className="grid md:grid-cols-3 gap-6 pb-16">
-      {selectedList.map((video) => {
-        return (
-          <div className="shadow-2xl rounded-xl p-5 pointer " key={video.id}>
-            {video.flag ? (
-              <div>
-                <p className="font-bold mb-4 leading-6">{video.title}</p>
-                <LockClosedIcon className="text-green-600 w-40 h-40 mx-auto" />
-              </div>
-            ) : (
-              <Link as={`/${course}/${video.id}`} href="/[course]/[id]" key={video.id}>
-                <a className="cursor-pointer trancate">
-                  <div>
-                    <p className="font-bold mb-4">{video.title}</p>
-                    <Image src={video.image} width={320} height={180} layout="responsive" />
-                  </div>
-                </a>
-              </Link>
-            )}
-          </div>
-        )
-      })}
+    <div>
+      {status === 'loading' && <p>Loading..</p>}
+      <div className="grid md:grid-cols-3 gap-6 pb-16">
+        {selectedList.map((video) => {
+          return (
+            <div className="shadow-2xl rounded-xl p-5 pointer " key={video.id}>
+              {video.flag ? (
+                <div>
+                  <p className="font-bold mb-4 leading-6">{video.title}</p>
+                  <LockClosedIcon className="text-green-600 w-40 h-40 mx-auto" />
+                </div>
+              ) : (
+                <Link as={`/${course}/${video.id}`} href="/[course]/[id]" key={video.id}>
+                  <a className="cursor-pointer trancate">
+                    <div>
+                      <p className="font-bold mb-4">{video.title}</p>
+                      <Image src={video.image} width={320} height={180} layout="responsive" />
+                    </div>
+                  </a>
+                </Link>
+              )}
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
