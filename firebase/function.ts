@@ -10,10 +10,11 @@ export const writeFirestore = (
   completed: boolean,
   category: string,
   flag: boolean,
+  clickableBtn: boolean,
   uid: string
 ) => {
-  const time = firebase.firestore.Timestamp.fromMillis(new Date() as any)
-  const createdAt = time.seconds
+  // const time = firebase.firestore.Timestamp.fromMillis(new Date() as any)
+  // const createdAt = time.seconds
   try {
     firebase.firestore().collection('users').doc(uid).collection('videos').doc(id).set({
       id,
@@ -23,14 +24,15 @@ export const writeFirestore = (
       path,
       completed,
       category,
+      clickableBtn,
       flag,
     })
-    if (completed) {
-      firebase.firestore().collection('activity').doc().set({
-        title,
-        createdAt,
-      })
-    }
+    // if (completed) {
+    //   firebase.firestore().collection('activity').doc().set({
+    //     title,
+    //     createdAt,
+    //   })
+    // }
   } catch (error) {
     console.log(error)
   }
@@ -45,7 +47,6 @@ export const removeFirestore = (id: string, uid: string) => {
 }
 
 export const editFireStore = (uid: string, data: ProfileProps) => {
-  console.log('hey')
   try {
     firebase.firestore().collection('users').doc(uid).collection('profile').doc('detail').set({
       name: data.name,

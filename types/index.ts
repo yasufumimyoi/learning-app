@@ -13,6 +13,7 @@ export type VideoProps = {
   completed: boolean
   category: string
   flag: boolean
+  clickableBtn: boolean
 }
 
 export type ProfileProps = {

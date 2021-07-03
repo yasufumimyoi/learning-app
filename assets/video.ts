@@ -8,6 +8,7 @@ export const videoData = [
     completed: false,
     category: 'aws',
     flag: false,
+    clickableBtn: true,
   },
   {
     id: 'aws_2',
@@ -18,6 +19,7 @@ export const videoData = [
     completed: false,
     category: 'aws',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'aws_3',
@@ -28,6 +30,7 @@ export const videoData = [
     completed: false,
     category: 'aws',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'aws_4',
@@ -38,6 +41,7 @@ export const videoData = [
     completed: false,
     category: 'aws',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'aws_5',
@@ -48,6 +52,7 @@ export const videoData = [
     completed: false,
     category: 'aws',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'aws_6',
@@ -58,6 +63,7 @@ export const videoData = [
     completed: false,
     category: 'aws',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'aws_7',
@@ -68,6 +74,7 @@ export const videoData = [
     completed: false,
     category: 'aws',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'aws_8',
@@ -78,6 +85,7 @@ export const videoData = [
     completed: false,
     category: 'aws',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'aws_9',
@@ -88,6 +96,7 @@ export const videoData = [
     completed: false,
     category: 'aws',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'docker_1',
@@ -98,6 +107,7 @@ export const videoData = [
     completed: false,
     category: 'docker',
     flag: false,
+    clickableBtn: true,
   },
   {
     id: 'docker_2',
@@ -108,6 +118,7 @@ export const videoData = [
     completed: false,
     category: 'docker',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'docker_3',
@@ -118,6 +129,7 @@ export const videoData = [
     completed: false,
     category: 'docker',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'docker_4',
@@ -128,6 +140,7 @@ export const videoData = [
     completed: false,
     category: 'docker',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'docker_5',
@@ -139,6 +152,7 @@ export const videoData = [
     completed: false,
     category: 'docker',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'docker_6',
@@ -149,6 +163,7 @@ export const videoData = [
     completed: false,
     category: 'docker',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'docker_7',
@@ -159,6 +174,7 @@ export const videoData = [
     completed: false,
     category: 'docker',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'docker_8',
@@ -169,6 +185,7 @@ export const videoData = [
     completed: false,
     category: 'docker',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'docker_9',
@@ -179,6 +196,7 @@ export const videoData = [
     completed: false,
     category: 'docker',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'firebase_1',
@@ -189,6 +207,7 @@ export const videoData = [
     completed: false,
     category: 'firebase',
     flag: false,
+    clickableBtn: true,
   },
   {
     id: 'firebase_2',
@@ -199,6 +218,7 @@ export const videoData = [
     completed: false,
     category: 'firebase',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'firebase_3',
@@ -209,6 +229,7 @@ export const videoData = [
     completed: false,
     category: 'firebase',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'firebase_4',
@@ -219,6 +240,7 @@ export const videoData = [
     completed: false,
     category: 'firebase',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'firebase_5',
@@ -229,6 +251,7 @@ export const videoData = [
     completed: false,
     category: 'firebase',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'firebase_6',
@@ -239,6 +262,7 @@ export const videoData = [
     completed: false,
     category: 'firebase',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'firebase_7',
@@ -249,6 +273,7 @@ export const videoData = [
     completed: false,
     category: 'firebase',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'firebase_8',
@@ -259,6 +284,7 @@ export const videoData = [
     completed: false,
     category: 'firebase',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'firebase_9',
@@ -269,6 +295,7 @@ export const videoData = [
     completed: false,
     category: 'firebase',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'javascript_1',
@@ -279,6 +306,7 @@ export const videoData = [
     completed: false,
     category: 'javascript',
     flag: false,
+    clickableBtn: true,
   },
   {
     id: 'javascript_2',
@@ -289,6 +317,7 @@ export const videoData = [
     completed: false,
     category: 'javascript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'javascript_3',
@@ -299,6 +328,7 @@ export const videoData = [
     completed: false,
     category: 'javascript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'javascript_4',
@@ -309,6 +339,7 @@ export const videoData = [
     completed: false,
     category: 'javascript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'javascript_5',
@@ -319,6 +350,7 @@ export const videoData = [
     completed: false,
     category: 'javascript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'javascript_6',
@@ -329,6 +361,7 @@ export const videoData = [
     completed: false,
     category: 'javascript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'javascript_7',
@@ -339,6 +372,7 @@ export const videoData = [
     completed: false,
     category: 'javascript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'javascript_8',
@@ -349,6 +383,7 @@ export const videoData = [
     completed: false,
     category: 'javascript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'javascript_9',
@@ -359,6 +394,7 @@ export const videoData = [
     completed: false,
     category: 'javascript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'material_1',
@@ -369,6 +405,7 @@ export const videoData = [
     completed: false,
     category: 'material',
     flag: false,
+    clickableBtn: true,
   },
   {
     id: 'material_2',
@@ -379,6 +416,7 @@ export const videoData = [
     completed: false,
     category: 'material',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'material_3',
@@ -389,6 +427,7 @@ export const videoData = [
     completed: false,
     category: 'material',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'material_4',
@@ -399,6 +438,7 @@ export const videoData = [
     completed: false,
     category: 'material',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'material_5',
@@ -409,6 +449,7 @@ export const videoData = [
     completed: false,
     category: 'material',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'material_6',
@@ -419,6 +460,7 @@ export const videoData = [
     completed: false,
     category: 'material',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'material_7',
@@ -429,6 +471,7 @@ export const videoData = [
     completed: false,
     category: 'material',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'material_8',
@@ -439,6 +482,7 @@ export const videoData = [
     completed: false,
     category: 'material',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'material_9',
@@ -449,6 +493,7 @@ export const videoData = [
     completed: false,
     category: 'material',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'node_1',
@@ -459,6 +504,7 @@ export const videoData = [
     completed: false,
     category: 'node',
     flag: false,
+    clickableBtn: true,
   },
   {
     id: 'node_2',
@@ -469,6 +515,7 @@ export const videoData = [
     completed: false,
     category: 'node',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'node_3',
@@ -479,6 +526,7 @@ export const videoData = [
     completed: false,
     category: 'node',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'node_4',
@@ -489,6 +537,7 @@ export const videoData = [
     completed: false,
     category: 'node',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'node_5',
@@ -499,6 +548,7 @@ export const videoData = [
     completed: false,
     category: 'node',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'node_6',
@@ -509,6 +559,7 @@ export const videoData = [
     completed: false,
     category: 'node',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'node_7',
@@ -519,6 +570,7 @@ export const videoData = [
     completed: false,
     category: 'node',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'node_8',
@@ -529,6 +581,7 @@ export const videoData = [
     completed: false,
     category: 'node',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'node_9',
@@ -539,6 +592,7 @@ export const videoData = [
     completed: false,
     category: 'node',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'router_1',
@@ -549,6 +603,7 @@ export const videoData = [
     completed: false,
     category: 'router',
     flag: false,
+    clickableBtn: true,
   },
   {
     id: 'router_2',
@@ -559,6 +614,7 @@ export const videoData = [
     completed: false,
     category: 'router',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'router_3',
@@ -569,6 +625,7 @@ export const videoData = [
     completed: false,
     category: 'router',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'router_4',
@@ -579,6 +636,7 @@ export const videoData = [
     completed: false,
     category: 'router',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'router_5',
@@ -589,6 +647,7 @@ export const videoData = [
     completed: false,
     category: 'router',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'router_6',
@@ -599,6 +658,7 @@ export const videoData = [
     completed: false,
     category: 'router',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'router_7',
@@ -609,6 +669,7 @@ export const videoData = [
     completed: false,
     category: 'router',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'router_8',
@@ -619,6 +680,7 @@ export const videoData = [
     completed: false,
     category: 'router',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'router_9',
@@ -629,6 +691,7 @@ export const videoData = [
     completed: false,
     category: 'router',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'react_1',
@@ -639,6 +702,7 @@ export const videoData = [
     completed: false,
     category: 'react',
     flag: false,
+    clickableBtn: true,
   },
   {
     id: 'react_2',
@@ -649,6 +713,7 @@ export const videoData = [
     completed: false,
     category: 'react',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'react_3',
@@ -659,6 +724,7 @@ export const videoData = [
     completed: false,
     category: 'react',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'react_4',
@@ -669,6 +735,7 @@ export const videoData = [
     completed: false,
     category: 'react',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'react_5',
@@ -679,6 +746,7 @@ export const videoData = [
     completed: false,
     category: 'react',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'react_6',
@@ -690,6 +758,7 @@ export const videoData = [
     completed: false,
     category: 'react',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'react_7',
@@ -700,6 +769,7 @@ export const videoData = [
     completed: false,
     category: 'react',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'react_8',
@@ -710,6 +780,7 @@ export const videoData = [
     completed: false,
     category: 'react',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'react_9',
@@ -720,6 +791,7 @@ export const videoData = [
     completed: false,
     category: 'react',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'typescript_1',
@@ -730,6 +802,7 @@ export const videoData = [
     completed: false,
     category: 'typescript',
     flag: false,
+    clickableBtn: true,
   },
   {
     id: 'typescript_2',
@@ -740,6 +813,7 @@ export const videoData = [
     completed: false,
     category: 'typescript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'typescript_3',
@@ -750,6 +824,7 @@ export const videoData = [
     completed: false,
     category: 'typescript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'typescript_4',
@@ -760,6 +835,7 @@ export const videoData = [
     completed: false,
     category: 'typescript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'typescript_5',
@@ -770,6 +846,7 @@ export const videoData = [
     completed: false,
     category: 'typescript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'typescript_6',
@@ -780,6 +857,7 @@ export const videoData = [
     completed: false,
     category: 'typescript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'typescript_7',
@@ -790,6 +868,7 @@ export const videoData = [
     completed: false,
     category: 'typescript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'typescript_8',
@@ -800,6 +879,7 @@ export const videoData = [
     completed: false,
     category: 'typescript',
     flag: true,
+    clickableBtn: true,
   },
   {
     id: 'typescript_9',
@@ -810,5 +890,6 @@ export const videoData = [
     completed: false,
     category: 'typescript',
     flag: true,
+    clickableBtn: true,
   },
 ]
