@@ -23,6 +23,21 @@ export const fetchProfileData = createAsyncThunk(
               dispatch(setProfile(doc.data()))
             })
           })
+      } else {
+        dispatch(
+          setProfile({
+            name: '',
+            location: '',
+            comment: '',
+            image: '',
+          })
+        )
+        firebase.firestore().collection('users').doc(uid).collection('profile').doc('detail').set({
+          name: '',
+          location: '',
+          comment: '',
+          image: '',
+        })
       }
     } catch (error) {
       console.log(error)
@@ -34,10 +49,10 @@ type State = {
   uid: string
   isLogin: boolean
   profile: {
-    name?: string
-    location?: string
-    comment?: string
-    image?: string
+    name: string
+    location: string
+    comment: string
+    image: string
   }
   status: string
 }

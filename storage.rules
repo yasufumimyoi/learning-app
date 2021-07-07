@@ -1,0 +1,20 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAuthenticated() {
+      return request.auth != null
+    }
+
+    function isUserAuthenticated(uid){
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+
+    match /user/{userID}/profile/{profileID} {
+      allow read: if isUserAuthenticated(userID); 
+      allow write: if isUserAuthenticated(userID) 
+        && request.resource.size < 7 * 1024 * 1024 
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}
