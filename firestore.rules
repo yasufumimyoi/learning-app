@@ -68,5 +68,13 @@ service cloud.firestore {
         && (incomingData().title != null) && (incomingData().title is string)
         && (incomingData().createdAt != null) && (incomingData().createdAt is timestamp)
     }
+
+    match /videoData/{videoID=**} {
+      allow read: if true
+    }
+
+    match /course/{courseID=**} {
+      allow read: if true
+    }
   }
 }

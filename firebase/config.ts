@@ -3,7 +3,7 @@ import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage'
 
-if (typeof window !== 'undefined' && !firebase.apps.length) {
+if (!firebase.apps.length) {
   firebase.initializeApp({
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -12,8 +12,10 @@ if (typeof window !== 'undefined' && !firebase.apps.length) {
     messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   })
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+} else {
+  firebase.app()
 }
+
 export { firebase }
 export const googleProvider = new firebase.auth.GoogleAuthProvider()
 export const githubProvider = new firebase.auth.GithubAuthProvider()
