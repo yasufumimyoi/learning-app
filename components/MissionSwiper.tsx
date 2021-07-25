@@ -16,20 +16,22 @@ SwiperCore.use([Autoplay, Virtual])
 const MissionSwiper = () => {
   const [test, setTest] = useState<Props[] | undefined>([])
 
-  useEffect(async () => {
+  useEffect(() => {
     const data = [] as Props[]
-    await firebase
+    firebase
       .firestore()
       .collection('activity')
+      .orderBy('createdAt', 'desc')
       .get()
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          const temp = {}
+          const temp = {} as Props
           const title = doc.data().title
-          const time = doc.data().createdAt.toDate()
+          const createdAt = doc.data().createdAt.toDate()
+          const name = doc.data().name
           temp.title = title
-          temp.time = time
-
+          temp.createdAt = createdAt
+          temp.name = name
           data.push(temp)
         })
         setTest(data)
@@ -47,8 +49,10 @@ const MissionSwiper = () => {
         {test?.map((slideContent, index) => {
           return (
             <SwiperSlide key={slideContent.title} virtualIndex={index}>
-              <p>{slideContent.name !== '' ? slideContent.name : '匿名ユーザー'}</p>
-              <p>{slideContent.title}</p>
+              <p className="font-bold mb-2">
+                {slideContent.name !== '' ? `${slideContent.name}さんが ` : '匿名ユーザーさんが'}
+              </p>
+              <p className="text-sm mb-1">{slideContent.title + 'を視聴しました'}</p>
               <p>{dayjs(slideContent.createdAt).format('YYYY/MM/DD HH:mm')}</p>
             </SwiperSlide>
           )
