@@ -86,41 +86,43 @@ const Video = () => {
       {!check ? (
         <div>
           {selectedVideo.map((video) => (
-            <div key={video.id}>
-              <div className="aspect-w-16 aspect-h-9">
-                <Player
-                  id={video.id}
-                  url={video.url}
-                  completed={video.completed}
-                  clickableBtn={video.clickableBtn}
-                  uid={uid}
-                />
-              </div>
-              <div className="flex items-center mt-5">
-                <p className="font-bold text-xl mr-4">{video.title}</p>
-                {video.clickableBtn ? (
-                  <button
-                    className={`text-white rounded px-8 py-2 focus:outline-none bg-green-200 cursor-auto `}
-                    disabled={video.clickableBtn}
-                  >
-                    <div className="flex items-center">
-                      <LockClosedIcon className="text-white inline w-5 mr-2" />
-                      Locked
-                    </div>
-                  </button>
-                ) : (
-                  <button
-                    className={`text-white rounded px-8 py-2 focus:outline-none bg-green-600 cursor-pointer `}
+            <div className="flex" key={video.id}>
+              <div className=" w-9/12">
+                <div className="aspect-w-16 aspect-h-9">
+                  <Player
                     id={video.id}
-                    onClick={onClick}
-                    disabled={video.clickableBtn}
-                  >
-                    <div className="flex items-center">
-                      <LockOpenIcon className="text-white inline w-5 mr-2" />
-                      Completed
-                    </div>
-                  </button>
-                )}
+                    url={video.url}
+                    completed={video.completed}
+                    clickableBtn={video.clickableBtn}
+                    uid={uid}
+                  />
+                </div>
+                <div className="flex items-center mt-5">
+                  <p className="font-bold text-xl mr-4">{video.title}</p>
+                  {video.clickableBtn ? (
+                    <button
+                      className={`text-white rounded px-8 py-2 focus:outline-none bg-green-200 cursor-auto `}
+                      disabled={video.clickableBtn}
+                    >
+                      <div className="flex items-center">
+                        <LockClosedIcon className="text-white inline w-5 mr-2" />
+                        Locked
+                      </div>
+                    </button>
+                  ) : (
+                    <button
+                      className={`text-white rounded px-8 py-2 focus:outline-none bg-green-600 cursor-pointer `}
+                      id={video.id}
+                      onClick={onClick}
+                      disabled={video.clickableBtn}
+                    >
+                      <div className="flex items-center">
+                        <LockOpenIcon className="text-white inline w-5 mr-2" />
+                        Completed
+                      </div>
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           ))}

@@ -76,5 +76,11 @@ service cloud.firestore {
     match /course/{courseID=**} {
       allow read: if true
     }
+
+    match /activity/{userID} {
+      allow read: if isAuthenticated()
+      allow create: if isUserAuthenticated(userID)
+      allow update: if isUserAuthenticated(userID)
+    }
   }
 }

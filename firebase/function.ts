@@ -1,7 +1,7 @@
 import { firebase } from './config'
 import { ProfileProps } from '../types/index'
 
-export const writeFirestore = (
+export const writeFirestore = async (
   id: string,
   url: string,
   title: string,
@@ -13,8 +13,8 @@ export const writeFirestore = (
   clickableBtn: boolean,
   uid: string
 ) => {
-  // const time = firebase.firestore.Timestamp.fromMillis(new Date() as any)
-  // const createdAt = time.seconds
+  const createdAt = firebase.firestore.Timestamp.fromDate(new Date())
+
   try {
     firebase.firestore().collection('users').doc(uid).collection('videos').doc(id).set({
       id,
@@ -27,12 +27,41 @@ export const writeFirestore = (
       clickableBtn,
       flag,
     })
-    // if (completed) {
-    //   firebase.firestore().collection('activity').doc().set({
-    //     title,
-    //     createdAt,
-    //   })
-    // }
+    if (completed) {
+      const userName = await firebase
+        .firestore()
+        .collection('users')
+        .doc(uid)
+        .collection('profile')
+        .doc('detail')
+        .get()
+      console.log(userName)
+      if (userName.exists) {
+        let name
+        await firebase
+          .firestore()
+          .collection('users')
+          .doc(uid)
+          .collection('profile')
+          .get()
+          .then((snapshot) => {
+            snapshot.forEach((doc) => {
+              name = doc.data().name
+            })
+          })
+        firebase.firestore().collection('activity').doc(uid).set({
+          title,
+          createdAt,
+          name,
+        })
+      } else {
+        firebase.firestore().collection('activity').doc(uid).set({
+          title,
+          createdAt,
+          name: '匿名ユーザー',
+        })
+      }
+    }
   } catch (error) {
     console.log(error)
   }
