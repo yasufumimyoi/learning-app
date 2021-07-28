@@ -15,7 +15,7 @@ service cloud.firestore {
     }
     
     match /users/{userID}/videos/{videoID} {
-      allow read: if isUserAuthenticated(userID)
+      allow read: if isAuthenticated()
       allow create: if isUserAuthenticated(userID) 
         && incomingData().size() == 9
         && (incomingData().id != null) && (incomingData().id is string)
@@ -43,7 +43,7 @@ service cloud.firestore {
     }
     
     match /users/{userID}/profile/{profileID} {
-      allow read: if isUserAuthenticated(userID)
+      allow read: if isAuthenticated()
       allow create: if isUserAuthenticated(userID)
         && (incomingData().name != null) && (incomingData().name is string) && (incomingData().name.size() == 0)
         && (incomingData().location != null) && (incomingData().location is string) && (incomingData().location.size() == 0)

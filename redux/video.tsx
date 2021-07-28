@@ -24,6 +24,7 @@ export const fetchVideoData = createAsyncThunk(
           .then((snapshot) => {
             snapshot.forEach((doc) => {
               dispatch(setVideos(doc.data()))
+              dispatch(setOtherVideos(doc.data()))
             })
           })
       } else {
@@ -38,6 +39,37 @@ export const fetchVideoData = createAsyncThunk(
             .doc(id)
             .set({ id, url, title, image, path, completed, category, clickableBtn, flag })
         })
+      }
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+)
+
+export const fetchOtherVideoData = createAsyncThunk(
+  'video/fetchOtherVideoData',
+  async (uid: string, { dispatch }) => {
+    try {
+      const dataRef = await firebase
+        .firestore()
+        .collection('users')
+        .doc(uid)
+        .collection('videos')
+        .get()
+      if (!dataRef.empty) {
+        dispatch(resetOtherVideos())
+        await firebase
+          .firestore()
+          .collection('users')
+          .doc(uid)
+          .collection('videos')
+          .get()
+          .then((snapshot) => {
+            snapshot.forEach((doc) => {
+              dispatch(setOtherVideos(doc.data()))
+            })
+          })
+        console.log('how many')
       }
     } catch (error) {
       console.log(error.message)
@@ -75,12 +107,14 @@ export const checkStatus = createAsyncThunk(
 
 type State = {
   videos: VideoProps[]
+  otherVideos: VideoProps[]
   status: string
   check: boolean
 }
 
 const initialState: State = {
   videos: [],
+  otherVideos: [],
   status: '',
   check: false,
 }
@@ -98,6 +132,12 @@ export const videoSlice = createSlice({
     setCheck: (state: State, action: PayloadAction<boolean>) => {
       state.check = action.payload
     },
+    setOtherVideos: (state: State, action) => {
+      state.otherVideos.push(action.payload)
+    },
+    resetOtherVideos: (state: State) => {
+      state.otherVideos = []
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchVideoData.pending, (state) => {
@@ -109,15 +149,30 @@ export const videoSlice = createSlice({
     builder.addCase(fetchVideoData.rejected, (state) => {
       state.status = 'rejected'
     })
+
+    builder.addCase(fetchOtherVideoData.pending, (state) => {
+      state.status = 'loading'
+    })
+    builder.addCase(fetchOtherVideoData.fulfilled, (state) => {
+      state.status = 'success'
+    })
+    builder.addCase(fetchOtherVideoData.rejected, (state) => {
+      state.status = 'rejected'
+    })
+
     builder.addCase(checkStatus.pending, (state) => {
       state.status = 'loading'
     })
     builder.addCase(checkStatus.fulfilled, (state) => {
       state.status = 'success'
     })
+    builder.addCase(checkStatus.rejected, (state) => {
+      state.status = 'rejected'
+    })
   },
 })
 
-export const { toggleStatus, setVideos, setCheck } = videoSlice.actions
+export const { toggleStatus, setVideos, setCheck, setOtherVideos, resetOtherVideos } =
+  videoSlice.actions
 
 export default videoSlice.reducer

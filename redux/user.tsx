@@ -45,6 +45,25 @@ export const fetchProfileData = createAsyncThunk(
   }
 )
 
+export const fetchOtherUser = createAsyncThunk(
+  'user/fetchOtherUser',
+  async (uid: string, { dispatch }) => {
+    try {
+      const dataRef = await firebase
+        .firestore()
+        .collection('users')
+        .doc(uid)
+        .collection('profile')
+        .get()
+      if (!dataRef.empty) {
+        dispatch(setOtherUid(uid))
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+)
+
 type State = {
   uid: string
   isLogin: boolean
@@ -55,6 +74,7 @@ type State = {
     image: string
   }
   status: string
+  otherUid: string
 }
 
 const initialState: State = {
@@ -67,6 +87,7 @@ const initialState: State = {
     image: '',
   },
   status: '',
+  otherUid: '',
 }
 
 export const userSlice = createSlice({
@@ -96,6 +117,9 @@ export const userSlice = createSlice({
         image: '',
       }
     },
+    setOtherUid: (state: State, action: PayloadAction<string>) => {
+      state.otherUid = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchProfileData.pending, (state) => {
@@ -107,9 +131,19 @@ export const userSlice = createSlice({
     builder.addCase(fetchProfileData.rejected, (state) => {
       state.status = 'rejected'
     })
+    builder.addCase(fetchOtherUser.pending, (state) => {
+      state.status = 'loading'
+    })
+    builder.addCase(fetchOtherUser.fulfilled, (state) => {
+      state.status = 'success'
+    })
+    builder.addCase(fetchOtherUser.rejected, (state) => {
+      state.status = 'rejected'
+    })
   },
 })
 
-export const { setUid, removeUid, setLogin, Logout, setProfile, removeProfile } = userSlice.actions
+export const { setUid, removeUid, setLogin, Logout, setProfile, removeProfile, setOtherUid } =
+  userSlice.actions
 
 export default userSlice.reducer

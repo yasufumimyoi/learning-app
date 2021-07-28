@@ -35,7 +35,6 @@ export const writeFirestore = async (
         .collection('profile')
         .doc('detail')
         .get()
-      console.log(userName)
       if (userName.exists) {
         let name
         await firebase
@@ -53,6 +52,7 @@ export const writeFirestore = async (
           title,
           createdAt,
           name,
+          uid,
         })
       } else {
         firebase.firestore().collection('activity').doc(uid).set({
