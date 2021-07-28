@@ -13,8 +13,8 @@ type CourseProps = {
 const Courses = ({ data }: { data: CourseProps[] }) => {
   return (
     <div>
-      <p className="text-base mb-5 sm:text-xl md:text-2xl">
-        Missionをこなして達成率を上げてみよう。
+      <p className="text-base text-center mb-10 sm:text-xl md:text-2xl">
+        <span className="font-bold">Mission</span> をこなして達成率を上げてみよう。
       </p>
       <MissionSwiper />
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 pb-16">
