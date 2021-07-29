@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { firebase } from '../firebase/config'
 import { removeUid, Logout } from '../redux/user'
+import { resetVideos } from '../redux/video'
 
 const Header = () => {
   const { isLogin } = useAppSelector((state) => state.user)
@@ -27,6 +28,7 @@ const Header = () => {
           alert('ログアウトしました')
           router.push('/')
           dispath(removeUid())
+          dispath(resetVideos())
           dispath(Logout())
           sessionStorage.clear()
         })
@@ -63,11 +65,18 @@ const Header = () => {
                 <HeaderItem Icon={LogoutIcon} title="LOGOUT" />
               </button>
             ) : (
-              <Link href="/signup">
-                <a>
-                  <HeaderItem Icon={LoginIcon} title="SIGNUP" />
-                </a>
-              </Link>
+              <div className="flex items-center">
+                <div className="mr-4">
+                  <Link href="/signup">
+                    <a>
+                      <HeaderItem Icon={LoginIcon} title="SIGNUP" />
+                    </a>
+                  </Link>
+                </div>
+                <button onClick={handleLogout}>
+                  <HeaderItem Icon={LogoutIcon} title="LOGOUT" />
+                </button>
+              </div>
             )}
           </div>
         )}
