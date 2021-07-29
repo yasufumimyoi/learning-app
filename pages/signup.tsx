@@ -123,9 +123,9 @@ const SignUp = () => {
             >
               Sign Up
             </button>
-            <Link href="/signin">
+            <Link href="/courses">
               <a className="text-center text-sm hover:opacity-50 transition duration-300">
-                Sign inに戻る
+                コース一覧に戻る
               </a>
             </Link>
           </form>

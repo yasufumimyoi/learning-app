@@ -126,6 +126,9 @@ export const videoSlice = createSlice({
     setVideos: (state: State, action) => {
       state.videos?.push(action.payload)
     },
+    resetVideos: (state: State) => {
+      state.videos = []
+    },
     toggleStatus: (state: State, action: PayloadAction<VideoProps[]>) => {
       state.videos = action.payload
     },
@@ -172,7 +175,7 @@ export const videoSlice = createSlice({
   },
 })
 
-export const { toggleStatus, setVideos, setCheck, setOtherVideos, resetOtherVideos } =
+export const { toggleStatus, setVideos, setCheck, setOtherVideos, resetOtherVideos, resetVideos } =
   videoSlice.actions
 
 export default videoSlice.reducer

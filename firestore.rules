@@ -58,15 +58,19 @@ service cloud.firestore {
     }
 
     match /activity/{userID} {
-      allow read: if isUserAuthenticated(userID)
+      allow read: if true
       allow create: if isUserAuthenticated(userID)
-        && incomingData().size() == 2
+        && incomingData().size() == 4
         && (incomingData().title != null) && (incomingData().title is string)
-        && (incomingData().createdAt != null) && (incomingData().createdAt is timestamp)
+        && (incomingData().createdAt != null) && (incomingData().createdAt is timestamp)      
+        && (incomingData().name != null) && (incomingData().name is string)
+        && (incomingData().uid != null) && (incomingData().uid is string)
       allow update: if isUserAuthenticated(userID)
-        && incomingData().size() == 2
+        && incomingData().size() == 4
         && (incomingData().title != null) && (incomingData().title is string)
         && (incomingData().createdAt != null) && (incomingData().createdAt is timestamp)
+        && (incomingData().name != null) && (incomingData().name is string)
+        && (incomingData().uid != null) && (incomingData().uid is string)
     }
 
     match /videoData/{videoID=**} {
@@ -75,12 +79,6 @@ service cloud.firestore {
 
     match /course/{courseID=**} {
       allow read: if true
-    }
-
-    match /activity/{userID} {
-      allow read: if isAuthenticated()
-      allow create: if isUserAuthenticated(userID)
-      allow update: if isUserAuthenticated(userID)
     }
   }
 }
