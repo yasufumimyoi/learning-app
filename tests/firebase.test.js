@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 const firebase = require('@firebase/rules-unit-testing')
 const fs = require('fs')
 
@@ -82,7 +86,7 @@ describe('Firestoreのテスト', () => {
     test('ログイン中でないusersの読取り', async () => {
       const db = authedApp({ uid: 'alice' })
       const message = db.collection('users').doc('bob').collection('videos').get()
-      await firebase.assertFails(message)
+      await firebase.assertSucceeds(message)
     })
   })
 
@@ -93,6 +97,8 @@ describe('Firestoreのテスト', () => {
       const message = db.collection('activity').doc('alice').set({
         title: 'React Lesson 1',
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        name: 'alice',
+        uid: '123abc',
       })
       await firebase.assertSucceeds(message)
     })
@@ -129,12 +135,17 @@ describe('Firestoreのテスト', () => {
 
     test('profileの書き込み', async () => {
       const db = authedApp({ uid: 'alice' })
-      const message = db.collection('users').doc('alice').collection('profile').doc('detail').set({
-        name: 'Alice',
-        location: 'Tokyo',
-        comment: 'Hello!!',
-        image: 'https://qiita.com/str32/items/a692073af32757618042',
-      })
+      const message = db
+        .collection('users')
+        .doc('alice')
+        .collection('profile')
+        .doc('detail')
+        .update({
+          name: 'Alice',
+          location: 'Tokyo',
+          comment: 'Hello!!',
+          image: 'https://qiita.com/str32/items/a692073af32757618042',
+        })
       await firebase.assertSucceeds(message)
     })
   })
