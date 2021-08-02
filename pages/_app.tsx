@@ -5,6 +5,7 @@ import store from '../redux/store'
 import Header from '../components/Header'
 import Auth from '../components/Auth'
 import Footer from '../components/Footer'
+import 'swiper/swiper.min.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
