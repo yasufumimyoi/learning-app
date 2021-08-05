@@ -23,7 +23,7 @@ export const videoData = [
   },
   {
     id: 'aws_3',
-    url: 'https://www.youtube.com/watch?v=2_FxLp9xgmo&t=1531s',
+    url: 'https://www.youtube.com/watch?v=2_FxLp9xgmo',
     image: 'http://img.youtube.com/vi/2_FxLp9xgmo/mqdefault.jpg',
     title: '【AWS 入門】ECS(Fargate)とECRで楽々コンテナからHelloWorldしよう！',
     path: '/courses/aws/3',
@@ -189,7 +189,7 @@ export const videoData = [
   },
   {
     id: 'docker_9',
-    url: 'https://www.youtube.com/watch?v=WmcdMiyqfZs&t=784s',
+    url: 'https://www.youtube.com/watch?v=WmcdMiyqfZs',
     image: 'http://img.youtube.com/vi/WmcdMiyqfZs/mqdefault.jpg',
     title: 'Dockerfile Tutorial - Docker in Practice || Docker Tutorial 10',
     path: '/courses/docker/9',
@@ -200,7 +200,7 @@ export const videoData = [
   },
   {
     id: 'firebase_1',
-    url: 'https://www.youtube.com/watch?v=meofoNuK3vo&t=133s',
+    url: 'https://www.youtube.com/watch?v=meofoNuK3vo',
     image: 'http://img.youtube.com/vi/meofoNuK3vo/mqdefault.jpg',
     title: 'Firebase Hosting をウェブで始めよう！ - Firecasts',
     path: '/courses/firebase/1',
@@ -211,7 +211,7 @@ export const videoData = [
   },
   {
     id: 'firebase_2',
-    url: 'https://www.youtube.com/watch?v=unr4s3jd9qA&t=329s',
+    url: 'https://www.youtube.com/watch?v=unr4s3jd9qA',
     image: 'http://img.youtube.com/vi/unr4s3jd9qA/mqdefault.jpg',
     title: 'Firebase React Authentication Tutorial For Beginners - Private Route With Hooks',
     path: '/courses/firebase/2',
@@ -244,7 +244,7 @@ export const videoData = [
   },
   {
     id: 'firebase_5',
-    url: 'https://www.youtube.com/watch?v=ApG8L2RKrSI&t=350s',
+    url: 'https://www.youtube.com/watch?v=ApG8L2RKrSI',
     image: 'http://img.youtube.com/vi/ApG8L2RKrSI/mqdefault.jpg',
     title: 'Web の Firebase 匿名認証を開始するには- Firecasts',
     path: '/courses/firebase/5',
@@ -310,7 +310,7 @@ export const videoData = [
   },
   {
     id: 'javascript_2',
-    url: 'https://www.youtube.com/watch?v=NIq3qLaHCIs&t=374s',
+    url: 'https://www.youtube.com/watch?v=NIq3qLaHCIs',
     image: 'http://img.youtube.com/vi/NIq3qLaHCIs/mqdefault.jpg',
     title: 'Why Is Array/Object Destructuring So Useful And How To Use It',
     path: '/courses/javascript/2',
@@ -332,7 +332,7 @@ export const videoData = [
   },
   {
     id: 'javascript_4',
-    url: 'https://www.youtube.com/watch?v=iLx4ma8ZqvQ&t=193s',
+    url: 'https://www.youtube.com/watch?v=iLx4ma8ZqvQ',
     image: 'http://img.youtube.com/vi/iLx4ma8ZqvQ/mqdefault.jpg',
     title: '...spread operator and rest operator - Beau teaches JavaScript',
     path: '/courses/javascript/4',
@@ -387,7 +387,7 @@ export const videoData = [
   },
   {
     id: 'javascript_9',
-    url: 'https://www.youtube.com/watch?v=mNJ06S60B9k&t=730s',
+    url: 'https://www.youtube.com/watch?v=mNJ06S60B9k',
     image: 'http://img.youtube.com/vi/mNJ06S60B9k/mqdefault.jpg',
     title: 'Top 10 Javascript Tricks You Didnt Know!',
     path: '/courses/javascript/9',
@@ -596,7 +596,7 @@ export const videoData = [
   },
   {
     id: 'router_1',
-    url: 'https://www.youtube.com/watch?v=Law7wfdg_ls&t=15s',
+    url: 'https://www.youtube.com/watch?v=Law7wfdg_ls',
     image: 'http://img.youtube.com/vi/Law7wfdg_ls/mqdefault.jpg',
     title: 'React Router Tutorial | React For Beginners',
     path: '/courses/router/1',
@@ -695,7 +695,7 @@ export const videoData = [
   },
   {
     id: 'react_1',
-    url: 'https://www.youtube.com/watch?v=ufodJVcpmps&t=2068s',
+    url: 'https://www.youtube.com/watch?v=ufodJVcpmps',
     image: 'http://img.youtube.com/vi/ufodJVcpmps/mqdefault.jpg',
     title: 'Build a Movie APP With React | React Tutorial for Beginners',
     path: '/courses/react/1',
@@ -706,7 +706,7 @@ export const videoData = [
   },
   {
     id: 'react_2',
-    url: 'https://www.youtube.com/watch?v=GuA0_Z1llYU&t=1465s',
+    url: 'https://www.youtube.com/watch?v=GuA0_Z1llYU',
     image: 'http://img.youtube.com/vi/GuA0_Z1llYU/mqdefault.jpg',
     title: 'Build a Weather App in React JS | React JS beginner Tutorial',
     path: '/courses/react/2',
@@ -750,7 +750,7 @@ export const videoData = [
   },
   {
     id: 'react_6',
-    url: 'https://www.youtube.com/watch?v=khJlrj3Y6Ls&t=124s',
+    url: 'https://www.youtube.com/watch?v=khJlrj3Y6Ls',
     image: 'http://img.youtube.com/vi/khJlrj3Y6Ls/mqdefault.jpg',
     title:
       'Build a COVID-19 Tracker Application - React JS Project (Hooks, Material UI, Charts js)',
@@ -773,7 +773,7 @@ export const videoData = [
   },
   {
     id: 'react_8',
-    url: 'https://www.youtube.com/watch?v=o5CdCETh8cQ&t=1555s',
+    url: 'https://www.youtube.com/watch?v=o5CdCETh8cQ',
     image: 'http://img.youtube.com/vi/o5CdCETh8cQ/mqdefault.jpg',
     title: 'React Fetch API Data | Build and Deploy a Real Advice App Project',
     path: '/courses/react/8',
@@ -806,7 +806,7 @@ export const videoData = [
   },
   {
     id: 'typescript_2',
-    url: 'https://www.youtube.com/watch?v=BwuLxPH8IDs&t=3341s',
+    url: 'https://www.youtube.com/watch?v=BwuLxPH8IDs',
     image: 'http://img.youtube.com/vi/BwuLxPH8IDs/mqdefault.jpg',
     title: 'TypeScript Course for Beginners 2020 - Learn TypeScript from Scratch!',
     path: '/courses/typescript/2',
@@ -817,7 +817,7 @@ export const videoData = [
   },
   {
     id: 'typescript_3',
-    url: 'https://www.youtube.com/watch?v=WBPrJSw7yQA&t=1397s',
+    url: 'https://www.youtube.com/watch?v=WBPrJSw7yQA',
     image: 'http://img.youtube.com/vi/WBPrJSw7yQA/mqdefault.jpg',
     title: 'Learn TypeScript in 50 Minutes - Tutorial for Beginners',
     path: '/courses/typescript/3',
@@ -828,7 +828,7 @@ export const videoData = [
   },
   {
     id: 'typescript_4',
-    url: 'https://www.youtube.com/watch?v=1UcLoOD1lRM&t=282s',
+    url: 'https://www.youtube.com/watch?v=1UcLoOD1lRM',
     image: 'http://img.youtube.com/vi/1UcLoOD1lRM/mqdefault.jpg',
     title: 'Using Typescript in Node.js',
     path: '/courses/typescript/4',
@@ -839,7 +839,7 @@ export const videoData = [
   },
   {
     id: 'typescript_5',
-    url: 'https://www.youtube.com/watch?v=Z5iWr6Srsj8&t=1204s',
+    url: 'https://www.youtube.com/watch?v=Z5iWr6Srsj8',
     image: 'http://img.youtube.com/vi/Z5iWr6Srsj8/mqdefault.jpg',
     title: 'React Typescript Tutorial',
     path: '/courses/typescript/5',
@@ -850,7 +850,7 @@ export const videoData = [
   },
   {
     id: 'typescript_6',
-    url: 'https://www.youtube.com/watch?v=F2JCjVSZlG0&t=3204s',
+    url: 'https://www.youtube.com/watch?v=F2JCjVSZlG0',
     image: 'http://img.youtube.com/vi/F2JCjVSZlG0/mqdefault.jpg',
     title: 'React / Typescript Tutorial - Build a Quiz App',
     path: '/courses/typescript/6',
