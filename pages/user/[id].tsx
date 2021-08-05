@@ -7,14 +7,21 @@ import { fetchOtherVideoData } from '../../redux/video'
 import { setOtherUid } from '../../redux/user'
 import { useAppDispatch } from '../../types/hooks'
 
+type Props = {
+  name: string
+  location: string
+  comment: string
+  image: string
+}
+
 const User = () => {
   const router = useRouter()
   const id = router.query.id as string
-  const [test, setTest] = useState([])
+  const [profile, setProfile] = useState<Props[]>([])
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    const data = [] as any
+    const data: Props[] = []
     firebase
       .firestore()
       .collection('users')
@@ -23,24 +30,25 @@ const User = () => {
       .get()
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          const temp = {} as any
+          const temp = {} as Props
           const comment = doc.data().comment
           const location = doc.data().location
           const name = doc.data().name
+          const image = doc.data().image
           temp.comment = comment
           temp.location = location
           temp.name = name
+          temp.image = image
           data.push(temp)
         })
-        setTest(data)
+        setProfile(data)
         dispatch(fetchOtherVideoData(id))
         dispatch(setOtherUid(id))
       })
-    console.log('how many')
   }, [id])
   return (
     <div>
-      {test.map((t: any) => (
+      {profile.map((t) => (
         <div
           key={t.name}
           className="flex flex-col shadow-2xl p-5 rounded mb-5 md:flex-row md:justify-around"

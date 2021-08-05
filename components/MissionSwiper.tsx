@@ -73,7 +73,7 @@ const MissionSwiper = () => {
             <SwiperSlide key={slideContent.title} virtualIndex={index}>
               <p className="font-bold mb-2">
                 <Link as={`/user/${slideContent.uid}`} href="/user/[id]" key={slideContent.title}>
-                  <a className=" text-green-600">
+                  <a className=" text-green-600 underline">
                     {slideContent.name !== ''
                       ? `${slideContent.name}さんが `
                       : 'ゲストユーザーさんが'}
