@@ -68,17 +68,32 @@ const Video = () => {
         }
       }
     )
-    Swal.fire({
-      title: 'Mission Completed!',
-      text: '次のMissionにアクセス出来るようになりました!',
-      icon: 'success',
-      focusConfirm: false,
-      confirmButtonText: '<div>Next</div>',
-      confirmButtonColor: '#059669',
-    }).then(() => {
-      dispath(toggleStatus(toggleCompleted))
-      router.push(`/courses/${course}`)
-    })
+
+    if (nextVideo.includes('10')) {
+      Swal.fire({
+        title: 'Mission Completed!',
+        text: 'こちらのコースのMissionは全て達成しました',
+        icon: 'success',
+        focusConfirm: false,
+        confirmButtonText: '<div>Topへ</div>',
+        confirmButtonColor: '#059669',
+      }).then(() => {
+        dispath(toggleStatus(toggleCompleted))
+        router.push(`/courses`)
+      })
+    } else {
+      Swal.fire({
+        title: 'Mission Completed!',
+        text: '次のMissionにアクセス出来るようになりました!',
+        icon: 'success',
+        focusConfirm: false,
+        confirmButtonText: '<div>Next</div>',
+        confirmButtonColor: '#059669',
+      }).then(() => {
+        dispath(toggleStatus(toggleCompleted))
+        router.push(`/courses/${course}`)
+      })
+    }
   }
 
   return (
@@ -87,7 +102,7 @@ const Video = () => {
         <div>
           {selectedVideo.map((video) => (
             <div className="flex" key={video.id}>
-              <div className=" w-9/12">
+              <div className=" w-11/12 m-auto">
                 <div className="aspect-w-16 aspect-h-9">
                   <Player
                     id={video.id}

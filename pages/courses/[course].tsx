@@ -45,6 +45,9 @@ const Course = () => {
 
   return (
     <div>
+      <p className="font-bold mb-8 text-center text-lg">
+        動画を視聴するとロックが解除されて、次の動画が視聴できるようになります
+      </p>
       {status === 'loading' && <p>Loading..</p>}
       <div className="grid md:grid-cols-3 gap-6 pb-16">
         {selectedList.map((video) => {
