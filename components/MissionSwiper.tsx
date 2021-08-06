@@ -69,7 +69,7 @@ const MissionSwiper = () => {
       <Swiper {...params} spaceBetween={50} virtual>
         {mission?.map((slideContent, index) => {
           return (
-            <SwiperSlide key={slideContent.title} virtualIndex={index}>
+            <SwiperSlide key={slideContent.uid} virtualIndex={index}>
               <p className="font-bold mb-2">
                 <Link as={`/user/${slideContent.uid}`} href="/user/[id]" key={slideContent.title}>
                   <a className=" text-green-600 underline">
