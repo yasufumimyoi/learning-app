@@ -62,7 +62,6 @@ const InitialData = [
 export const OtherProgress = () => {
   const { otherVideos } = useAppSelector((state) => state.video)
   const [state, setData] = useState<ChartProps>({ data: [] })
-  console.log(otherVideos)
 
   const chart = () => {
     const temp1 = otherVideos.filter((video: VideoProps) => video.category === 'aws')
@@ -101,7 +100,6 @@ export const OtherProgress = () => {
   }
 
   useEffect(() => {
-    console.log(otherVideos)
     chart()
   }, [otherVideos])
 

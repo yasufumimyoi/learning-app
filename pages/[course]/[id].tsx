@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 import { LockClosedIcon, LockOpenIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Large } from '../../components/Twitter'
 
 // eslint-disable-next-line no-use-before-define
 import React, { useEffect } from 'react'
@@ -116,7 +117,7 @@ const Video = () => {
                   <p className="font-bold text-xl mr-4">{video.title}</p>
                   {video.clickableBtn ? (
                     <button
-                      className={`text-white rounded px-8 py-2 focus:outline-none bg-green-200 cursor-auto `}
+                      className={`text-white rounded px-8 py-2 focus:outline-none bg-green-200 cursor-auto mr-4 `}
                       disabled={video.clickableBtn}
                     >
                       <div className="flex items-center">
@@ -137,6 +138,7 @@ const Video = () => {
                       </div>
                     </button>
                   )}
+                  <Large />
                 </div>
               </div>
             </div>
