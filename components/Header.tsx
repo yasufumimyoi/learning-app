@@ -48,7 +48,7 @@ const Header = () => {
             onClick={handleTop}
           >
             <AcademicCapIcon className="h-8 mr-4 text-green-600" />
-            <div className="text-white font-bold  text-sm sm:text-base">Mission in Programing</div>
+            <div className="text-white font-bold  text-sm sm:text-base">Mission in Programing2</div>
           </button>
         </div>
         {pathname !== '/' && pathname !== '/login' && (
